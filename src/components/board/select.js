@@ -4,16 +4,16 @@ import Select from 'react-select';
 // import { colourOptions } from './data';
 import './select.scss';
 
-const CustomSelect = ({ assignees, handleChange, selected, data }) => {
+const CustomSelect = ({ isMulti, handleChange, selected, data }) => {
   return (
     <Select
-      isMulti
-      name="colors"
-      value={assignees ? assignees.find(assignee => assignee.value === selected) : ''}
-      options={assignees ? assignees.map(assignee => {
+      isMulti={isMulti}
+      name="status"
+      value={data ? data.find(a => a.value === selected) : ''}
+      options={data ? data.map(b => {
         return {
-          value: assignee.id,
-          label: assignee.name
+          value: b.value,
+          label: b.label
         }
       }) : data}
       className="basic-multi-select"
