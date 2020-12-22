@@ -18,6 +18,10 @@ export const Container = styled.div`
   border-radius: 5px;
   width: 80%;
   margin: 0 auto;
+  form {
+    display: grid;
+    grid-gap: 25px;
+  }
 `;
 
 export const FormGroup = styled.div`
@@ -35,6 +39,13 @@ export const FormCaption = styled.div`
   font-size: 10px;
   color: rgba(0,0,0,.8);
   margin-top: 7px;
+  font-weight: bold;
+`;
+
+export const FormError = styled.p`
+  font-size: 10px;
+  color: red;
+  margin-top: 5px;
   font-weight: bold;
 `;
 

@@ -1,24 +1,17 @@
 import React from 'react';
 
 import Select from 'react-select';
-// import { colourOptions } from './data';
 import './select.scss';
 
-const CustomSelect = ({ isMulti, handleChange, selected, data }) => {
+const CustomSelect = ({ isMulti, onChange, data, value }) => {
   return (
     <Select
       isMulti={isMulti}
-      name="status"
-      value={data ? data.find(a => a.value === selected) : ''}
-      options={data ? data.map(b => {
-        return {
-          value: b.value,
-          label: b.label
-        }
-      }) : data}
+      value={data ? data.find(d => d.value === value) : ''}
+      options={ data }
       className="basic-multi-select"
       classNamePrefix="select"
-      onChange={handleChange}
+      onChange={e => onChange(e) }
     />
   )
 };
