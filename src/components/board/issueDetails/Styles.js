@@ -36,7 +36,7 @@ export const ActionRight = styled.div`
 
 export const Left = styled.div`
   display: grid;
-  grid-gap: 30px;
+  grid-gap: 20px;
 `;
 
 export const Right = styled.div`

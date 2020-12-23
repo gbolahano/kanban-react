@@ -9,7 +9,7 @@ export const Title = styled.div`
 `;
 
 export const Editor = styled.div`
-  font-size: 30px;
+  font-size: 40px;
 `;
 
 export const Button = styled.button`

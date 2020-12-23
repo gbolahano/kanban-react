@@ -23,7 +23,7 @@ const ISSUES = gql`
       priority
       description
       reporter{
-        name
+        id
       }
       comments{
         body
@@ -147,7 +147,7 @@ const Board = () => {
               }
             </div>
         </section>
-        <Link to={`${match.url}/issue/35389`}>View Modal</Link>
+        <Link to={`${match.url}/issue/1`}>View Modal</Link>
 
         <Route
           path={`${match.url}/issue/:issueId`}

@@ -1,13 +1,34 @@
 import React, {useState} from 'react';
+import { gql } from 'apollo-boost';
+import { useMutation } from '@apollo/react-hooks';
+import { useParams } from 'react-router-dom';
 
 import { FormTitle } from './../../../shared/Form/Styles';
 import CustomSelect from '../../select';
+import { priority } from '../../../shared/constants/selectData';
+import IssueCard from '../../issueCard';
 
-const Index = () => {
-  const [status, setStatus] = useState(null);
-  const handleStatusChange = (e) => {
-    // console.log(e.map(a => a.value));
-    setStatus(e);
+const UPDATE_PRIORITY = gql`
+  mutation UPDATE_PRIORITY($issueId: Int, $priority: Priority) {
+    updateIssue(issueId: $issueId, data: {
+      priority: $priority
+      }) {
+        priority
+      }
+  }
+`;
+const Index = ({ issue }) => {
+  const params = useParams();
+  const [ priorityy, setPriority ] = useState(issue.priority);
+  const [updatePriority, {loading}] = useMutation(UPDATE_PRIORITY);
+  const handleChange = async (e) => {
+    setPriority(e.value);
+    await updatePriority({
+      variables: {
+        issueId: parseInt(params.issueId),
+        priority: e.value
+      }
+    });
   }
 
   return (
@@ -15,30 +36,9 @@ const Index = () => {
       <FormTitle>Priority</FormTitle>
       <CustomSelect
         isMulti={false}
-        data={[
-          {
-            value: 'highest',
-            label:'Highest'
-          },
-          {
-            value: 'high',
-            label:'High'
-          },
-          {
-            value: 'medium',
-            label:'Medium'
-          },
-          {
-            value: 'low',
-            label:'Low'
-          },
-          {
-            value: 'lowest',
-            label:'Lowest'
-          }
-        ]}
-        selected={status}
-        handleChange={handleStatusChange}
+        data={priority}
+        value={priorityy}
+        onChange={handleChange}
       />
     </div>
    );

@@ -24,11 +24,12 @@ export const Avatar = styled.img`
 `;
 
 export const Name = styled.div`
-  font-size: 20px;
+  font-size: 15px;
+  margin-bottom: 7px;
 `;
 
 export const CommentBody = styled.div`
-  font-size: 17px;
+  font-size: 13px;
 `;
 
 export const Button = styled.button`

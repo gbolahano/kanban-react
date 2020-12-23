@@ -13,6 +13,25 @@ export const type = [
   }
 ];
 
+export const status = [
+  {
+    value: 'backlog',
+    label:'Backlog'
+  },
+  {
+    value: 'development',
+    label:'Selected for development'
+  },
+  {
+    value: 'progress',
+    label:'Progress'
+  },
+  {
+    value: 'done',
+    label:'Done'
+  }
+];
+
 export const assignees = [
   {
     value: 1,
@@ -20,11 +39,11 @@ export const assignees = [
   },
   {
     value: 2,
-    label:'Baby Yoda'
+    label:'Avery Spectre'
   },
   {
     value: 3,
-    label:'Avery Spencer'
+    label:'Tyler Nun'
   }
 ];
 
@@ -58,11 +77,11 @@ export const reporter = [
   },
   {
     value: 2,
-    label:'Baby Yoda'
+    label:'Avery Spectre'
   },
   {
     value: 3,
-    label:'Avery Spencer'
+    label:'Tyler Nun'
   }
 ];
 

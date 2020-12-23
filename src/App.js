@@ -7,7 +7,7 @@ import Routes from './Routes';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/',
-  // cache: new InMemoryCache(),
+  cache: new InMemoryCache(),
   request: operation => {
     const { token } = getToken('jira_token') || '';
     operation.setContext({
