@@ -6,12 +6,14 @@ import { useParams } from 'react-router-dom';
 import { FormTitle } from './../../../shared/Form/Styles';
 import CustomSelect from '../../select';
 import { status } from '../../../shared/constants/selectData';
+import { ISSUES  } from '../../board';
 
 const UPDATE_STATUS = gql`
   mutation UPDATE_STATUS($issueId: Int, $status: IssueStatus) {
     updateIssue(issueId: $issueId, data: {
       status: $status
       }) {
+        id
         status
       }
   }
@@ -26,6 +28,16 @@ const Index = ({issue}) => {
       variables: {
         issueId: parseInt(params.issueId),
         status: e.value
+      },
+      update: (cache, {data: {updateIssue}}) => {
+        // read query data from cache
+        let d = cache.readQuery({ query: ISSUES });
+        // find the data to be updated from the cached data
+        let issueIndex = d.Issues.find(i => i.id == updateIssue.id);
+        // update the data accordingly
+        issueIndex.status = updateIssue.status;
+        // write the data back to the cache
+        cache.writeQuery({ query: ISSUES, data: d });
       }
     });
   }

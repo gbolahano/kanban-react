@@ -4,12 +4,14 @@ import { useMutation } from '@apollo/react-hooks';
 import { useParams} from 'react-router-dom';
 import ReactQuill from 'react-quill';
 import {Editor, Title, ReactQuilll, SuccessButton, Button} from './Styles';
+import {ISSUES} from '../../board';
 
 const UPDATE_DESCRIPTION = gql`
   mutation UPDATE_DESCRIPTION($issueId: Int, $description: String) {
     updateIssue(issueId: $issueId, data: {
       description: $description
       }) {
+        id
         description
       }
   }
@@ -26,6 +28,16 @@ const Index = ({ issue }) => {
       variables: {
         issueId: parseInt(params.issueId),
         description: value
+      },
+      update: (cache, {data: {updateIssue}}) => {
+        // read query data from cache
+        let d = cache.readQuery({ query: ISSUES });
+        // find the data to be updated from the cached data
+        let issueIndex = d.Issues.find(i => i.id == updateIssue.id);
+        // update the data accordingly
+        issueIndex.description = updateIssue.description;
+        // write the data back to the cache
+        cache.writeQuery({ query: ISSUES, data: d });
       }
     });
   }

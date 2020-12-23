@@ -172,3 +172,4 @@ const Board = () => {
 }
 
 export default Board;
+export { ISSUES };
