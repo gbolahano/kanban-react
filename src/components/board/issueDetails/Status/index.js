@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import { FormTitle } from './../../../shared/Form/Styles';
 import CustomSelect from '../../select';
 import { status } from '../../../shared/constants/selectData';
-import { ISSUES  } from '../../board';
+import {ISSUES} from '../../Lists';
 
 const UPDATE_STATUS = gql`
   mutation UPDATE_STATUS($issueId: Int, $status: IssueStatus) {

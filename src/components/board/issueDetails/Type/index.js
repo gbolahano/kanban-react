@@ -3,10 +3,9 @@ import { gql } from 'apollo-boost';
 import { useMutation } from '@apollo/react-hooks';
 import { useParams } from 'react-router-dom';
 
-import { FormTitle } from './../../../shared/Form/Styles';
 import CustomSelect from '../../select';
 import { type } from '../../../shared/constants/selectData';
-import {ISSUES} from '../../board';
+import {ISSUES} from '../../Lists';
 
 const UPDATE_TYPE = gql`
   mutation UPDATE_TYPE($issueId: Int, $type: IssueType) {

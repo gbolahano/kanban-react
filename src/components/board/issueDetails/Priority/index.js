@@ -6,8 +6,7 @@ import { useParams } from 'react-router-dom';
 import { FormTitle } from './../../../shared/Form/Styles';
 import CustomSelect from '../../select';
 import { priority } from '../../../shared/constants/selectData';
-import IssueCard from '../../issueCard';
-import { ISSUES } from '../../board';
+import {ISSUES} from '../../Lists';
 
 const UPDATE_PRIORITY = gql`
   mutation UPDATE_PRIORITY($issueId: Int, $priority: Priority) {

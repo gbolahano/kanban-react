@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect} from 'react';
+import React, { useState, useEffect} from 'react';
 import { DragDropContext } from 'react-beautiful-dnd';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
@@ -35,14 +35,22 @@ const ISSUES = gql`
 `;
 
 const Index = () => {
-  const columns = ['backlog'];
+  const columns = ['backlog', 'development'];
   const { loading, error, data } = useQuery(ISSUES);
-  const [filteredData, setFilteredData] = useState([]);
+  const [filteredData, setFilteredData] = useState({});
 
   useEffect(() => {
     if(data) {
       let backlog = data.Issues.filter(issue => issue.status === 'backlog');
-      setFilteredData(backlog);
+      let development = data.Issues.filter(issue => issue.status === 'development');
+      let progress = data.Issues.filter(issue => issue.status === 'progress');
+      let done = data.Issues.filter(issue => issue.status === 'done');
+      setFilteredData({
+        'backlog': backlog,
+        'development': development,
+        'progress': progress,
+        'done': done
+      });
     }
   }, [data]);
 
@@ -67,11 +75,30 @@ const Index = () => {
       return;
     }
 
-    const newBacklog = Array.from(filteredData);
-    const issue = newBacklog[source.index];
-    newBacklog.splice(source.index, 1)
-    newBacklog.splice(destination.index, 0, issue);
-    setFilteredData(newBacklog);
+    if (destination.droppableId === source.droppableId) {
+      const newBacklog = Array.from(filteredData[source.droppableId]);
+      const issue = newBacklog[source.index];
+      newBacklog.splice(source.index, 1)
+      newBacklog.splice(destination.index, 0, issue);
+      setFilteredData({
+        ...filteredData,
+        [source.droppableId]: newBacklog
+      });
+      return;
+    }
+
+    const startData = Array.from(filteredData[source.droppableId]);
+    const remIssue = startData[source.index];
+    startData.splice(source.index, 1);
+
+    const destinationData = Array.from(filteredData[destination.droppableId]);
+    destinationData.splice(destination.index, 0, remIssue);
+
+    setFilteredData({
+      ...filteredData,
+      [source.droppableId]: startData,
+      [destination.droppableId]: destinationData
+    });
 
   }
 
@@ -80,13 +107,13 @@ const Index = () => {
 
       <Container>
         {
-          columns.map((column, index) => {
+          Object.keys(filteredData).map((column, index) => {
             return (
               <List
                 key={index}
                 column={column}
                 status={column}
-                issues={filteredData} />
+                issues={filteredData[column]} />
             )
           })
         }
@@ -96,5 +123,4 @@ const Index = () => {
 }
 
 export default Index;
-
-
+export { ISSUES };

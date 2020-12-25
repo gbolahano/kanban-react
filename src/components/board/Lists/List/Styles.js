@@ -2,10 +2,13 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   background-color: #fafafa;
+  flex: 1;
   display: flex;
   flex-direction: column;
   padding: 0 5px;
-  align-self: flex-start;
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
 `;
 
 export const Title = styled.div`
@@ -16,5 +19,8 @@ export const Title = styled.div`
 `;
 
 export const Issues = styled.div`
-  padding: 8px;;
+  padding: 8px;
+  min-height: 100px;
+  flex: 1;
+  // flex-grow: 1;
 `;

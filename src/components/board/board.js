@@ -10,35 +10,6 @@ import Header from './Header';
 import Filter from './Filters';
 import Lists from './Lists';
 
-const ISSUES = gql`
-  query Issues{
-    Issues{
-      id
-      title
-      type
-      status
-      priority
-      description
-      reporter{
-        id
-      }
-      comments{
-        body
-        user{
-          name
-          avatarUri
-        }
-      }
-      assignees{
-        id
-        name
-        avatarUri
-        createdAt
-      }
-    }
-  }
-`;
-
 const Index = () => {
   const match = useRouteMatch();
 
@@ -72,4 +43,3 @@ const Index = () => {
 }
 
 export default Index;
-export { ISSUES };

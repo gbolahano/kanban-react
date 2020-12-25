@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import {gql} from 'apollo-boost';
 import {useMutation} from '@apollo/react-hooks';
 
-import {ISSUES} from '../../board';
+import {ISSUES} from '../../Lists';
 import {TitleTextArea} from './Styles';
 
 const UPDATE_TITLE = gql`

@@ -4,10 +4,9 @@ import { useMutation } from '@apollo/react-hooks';
 import { useParams } from 'react-router-dom';
 
 import { FormTitle } from './../../../shared/Form/Styles';
-// import CustomSelect from '../../select';
 import CustomSelect from './select';
 import { assignees } from '../../../shared/constants/selectData';
-import { ISSUES } from '../../board';
+import {ISSUES} from '../../Lists';
 
 const UPDATE_ASSIGNEE = gql`
   mutation UPDATE_ASSIGNEE($issueId: Int, $assignee: [Int]) {

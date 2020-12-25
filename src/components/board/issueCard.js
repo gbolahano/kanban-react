@@ -1,5 +1,4 @@
 import React from 'react';
-import as from '../../assets/1.jpg';
 
 const IssueCard = ({ showModal, issue, setSelectedIssue }) => {
 

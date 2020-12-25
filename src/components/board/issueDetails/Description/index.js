@@ -4,7 +4,7 @@ import { useMutation } from '@apollo/react-hooks';
 import { useParams} from 'react-router-dom';
 import ReactQuill from 'react-quill';
 import {Editor, Title, ReactQuilll, SuccessButton, Button} from './Styles';
-import {ISSUES} from '../../board';
+import {ISSUES} from '../../Lists';
 
 const UPDATE_DESCRIPTION = gql`
   mutation UPDATE_DESCRIPTION($issueId: Int, $description: String) {

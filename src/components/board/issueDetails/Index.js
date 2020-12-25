@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { withRouter, useParams } from 'react-router-dom';
 import{ gql } from 'apollo-boost';
-import { useQuery, useMutation } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/react-hooks';
 
 import Type from './Type';
 import Title from './Title';
@@ -49,10 +49,8 @@ const IssueDetails = (props) => {
   });
 
   if (error) return <Container>ERROR!!!</Container>;
-
   if (loading) return <Container>Loading!!!</Container>;
 
-  // console.log(data.Issue.title);
 
     return (
       <Container>
