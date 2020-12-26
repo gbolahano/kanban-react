@@ -21,6 +21,7 @@ export const CommentFormDiv = styled.div`
 export const Avatar = styled.img`
   border-radius: 100%;
   margin-right: 10px;
+  width: 25px;
 `;
 
 export const Name = styled.div`

@@ -37,6 +37,11 @@ export const ActionRight = styled.div`
 export const Left = styled.div`
   display: grid;
   grid-gap: 20px;
+  p {
+    img {
+      max-width: 100%;
+    };
+  }
 `;
 
 export const Right = styled.div`

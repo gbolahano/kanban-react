@@ -6,7 +6,7 @@ import Issue from './Issue';
 const Index = (props) => {
   return (
     <Container>
-      <Title>{props.column}</Title>
+      <Title>{props.column} {props.issues.length}</Title>
       <Droppable droppableId={props.status}>
         {provided => (
           <Issues

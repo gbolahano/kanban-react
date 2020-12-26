@@ -24,3 +24,4 @@ export const Issues = styled.div`
   flex: 1;
   // flex-grow: 1;
 `;
+

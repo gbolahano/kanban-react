@@ -1,14 +1,7 @@
-* {
-  box-sizing: 0;
-  margin: 0;
-  padding: 0;
-  font-size: 62.5%;
-  box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
-}
+import styled from 'styled-components';
 
-.container {
+export const Container = styled.div`
   display: grid;
   grid-template-columns: [navbar-start] 65px [navbar-end sidebar-start]  230px [sidebar-end board-start] 1fr [board-end];
   font-size: 3rem;
-}
+`;

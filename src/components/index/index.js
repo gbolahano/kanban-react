@@ -1,18 +1,18 @@
 import React, { Fragment } from 'react';
-import Navbar from '../navbar/navbar';
-import Sidebar from '../sidebar/sidebar';
-import Board from '../board/board';
+import Navbar from '../navbar';
+import Sidebar from '../sidebar';
+import Board from '../board';
 
-import './index.scss';
+import { Container } from './Styles';
 
 const Index = () => {
   return (
     <Fragment>
-      <div className="container">
+      <Container>
         <Navbar />
         <Sidebar />
         <Board />
-      </div>
+      </Container>
     </Fragment>
    );
 }

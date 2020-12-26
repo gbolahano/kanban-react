@@ -1,10 +1,9 @@
 import React, { Fragment } from 'react';
-import { Route, Link } from 'react-router-dom';
-import { gql } from 'apollo-boost';
+import { Route } from 'react-router-dom';
 import { useRouteMatch } from 'react-router-dom';
 
 import Modal from '../modal/index';
-import IssueDetails from '../board/issueDetails/Index';
+import IssueDetails from './issueDetails/Index';
 import { Container } from './Styles';
 import Header from './Header';
 import Filter from './Filters';
@@ -19,8 +18,6 @@ const Index = () => {
         <Header />
         <Filter />
         <Lists />
-
-        <Link to={`${match.url}/issue/1`}>View Modal</Link>
 
         <Route
           path={`${match.url}/issue/:issueId`}
