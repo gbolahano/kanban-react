@@ -6,11 +6,11 @@ export const Container = styled.div`
   @media screen and (max-width: 900px) {
     width: 100vw;
   }
-  padding-left: 35px;
-  padding-right: 35px;
-  padding-top: 20px;
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+  padding-top: 2rem;
   display: grid;
-  grid-gap: 15px;
+  grid-gap: 1.5rem;
   grid-template-rows: repeat(3, min-content) minmax(max-content, 1fr);
   grid-template-columns: 1fr;
 
@@ -18,7 +18,7 @@ export const Container = styled.div`
   .issues {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 15px;
+    grid-gap: 1.5rem;
     div {
       background-color: #fafafa;
       display: flex;
@@ -27,7 +27,7 @@ export const Container = styled.div`
 
       h3 {
         text-transform: uppercase;
-        padding: 10px;
+        padding: 1rem;
         font-size: 1.2rem;
         color: #444;
       }

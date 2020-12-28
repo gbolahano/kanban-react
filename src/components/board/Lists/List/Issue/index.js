@@ -1,8 +1,9 @@
 import React from 'react';
 import {Draggable} from 'react-beautiful-dnd';
 import { useRouteMatch } from 'react-router-dom';
+import './styles.scss';
 
-import { Container, StyledLink } from './Styles';
+import { Container, StyledLink, StyledIcon } from './Styles';
 
 const type = issue => {
   switch (issue.type) {

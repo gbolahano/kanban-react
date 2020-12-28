@@ -9,7 +9,7 @@ const Index = () => {
       </BreadCrumbs>
       <Title>
         <h2>Kanban Board</h2>
-        <button> <i className="fab fa-github"></i> Github Repo</button>
+        <a href="https://github.com/gbolahanO/kanban-graphql" target="_blank"> <i className="fab fa-github"></i> Github Repo</a>
       </Title>
     </Fragment>
 

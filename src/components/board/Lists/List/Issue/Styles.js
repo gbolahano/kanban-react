@@ -1,19 +1,19 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
+import {color} from '../../../../shared/constants/styles';
 
 export const Container = styled.div`
-  border: 1px solid lightgrey;
   background-color: white;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 1rem;
   border-radius: 5px;
-  margin-bottom: 10px;
-  box-shadow: 0 0 4px rgba(#cccccc, .6);
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .2);
   // cursor: pointer;
 
   &:hover {
-    background-color: rgba(#cccccc, .1);
+    background-color: ${color.backgroundLightest};
   }
   p {
     font-size: 1.3rem;
@@ -21,20 +21,20 @@ export const Container = styled.div`
   }
   div {
     box-sizing: border-box;
-    padding-right: 10px;
+    padding-right: 1rem;
     overflow: hidden;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 1rem;
     // flex-wrap: nowrap;
 
     div {
       // flex: 1;
       figure {
         img {
-          width: 30px;
-          height: 30px;
+          width: 3rem;
+          height: 3rem;
           border-radius: 100%;
         }
       }
@@ -44,8 +44,8 @@ export const Container = styled.div`
       display: flex;
       figure {
         img {
-          width: 30px;
-          height: 30px;
+          width: 3rem;
+          height: 3rem;
           border-radius: 100%;
           border: 2px solid #fff;
           margin-right: -10px;
@@ -60,5 +60,8 @@ export const Container = styled.div`
 export const StyledLink = styled(Link)`
   text-decoration: none;
   color: #000;
-  font-weight: bold;
+`;
+
+export const StyledIcon = styled.span`
+  font-size: 1.3rem;
 `;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import ReactQuill from 'react-quill';
+import {color} from '../../../shared/constants/styles';
 
 export const Title = styled.div`
   font-size: 12px;
@@ -9,18 +10,19 @@ export const Title = styled.div`
 `;
 
 export const Editor = styled.div`
-  font-size: 40px;
+  min-height: 10rem;
+  font-size: 4rem;
 `;
 
 export const Button = styled.button`
   padding: 5px 10px;
   font-size: 1rem;
-  margin-right: 10px;
+  margin-right: 1rem;
   border: none;
-  background-color: #e7e7e7;
+  background-color: ${color.backgroundLight};
   cursor: pointer;
   border-radius: 2px;
-  margin-top: 10px;
+  margin-top: 1ren;
   transition: ease-in .01s;
 
   &:hover {
@@ -33,15 +35,15 @@ export const Button = styled.button`
 
 export const DangerButton = styled(Button)`
   color: #fff;
-  background-color: #df1313;
+  background-color: ${color.danger};
 `;
 export const SuccessButton = styled(Button)`
   color: #fff;
-  background-color: #09ac52;
+  background-color: ${color.success};
 `;
 
 export const ReactQuilll = styled(ReactQuill)`
   & > * {
-    font-size: 30px;
+    font-size: 3rem;
   }
 `;

@@ -1,15 +1,16 @@
 import styled from 'styled-components';
+import {color} from '../../shared/constants/styles';
 
 export const Filters = styled.div`
   display: flex;
   align-items: center;
   div {
     display: flex;
-    margin-right: 30px;
+    margin-right: 3rem;
     figure {
       img {
-        width: 35px;
-        height: 35px;
+        width: 3.5rem;
+        height: 3.5rem;
         border-radius: 100%;
         border: 2px solid #fff;
         margin-right: -7px;
@@ -23,7 +24,7 @@ export const Filters = styled.div`
   button{
     outline: none;
     display: block;
-    background-color: #fafafa;
+    background-color: #f5f5f7;
     padding: 6px 15px;
     font-size: 1.2rem;
     border: 0px;
@@ -31,7 +32,7 @@ export const Filters = styled.div`
     border-radius: 5px;
 
     &:hover {
-      background-color: rgba(#cccccc, .6);
+    background-color: ${color.backgroundLightest};
     }
   }
 `;

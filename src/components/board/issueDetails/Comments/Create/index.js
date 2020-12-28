@@ -1,5 +1,5 @@
 import React from 'react';
-import as from '../../../../../assets/1.jpg';
+import as from '../../../../../assets/lekki.jpg';
 
 import {Avatar, Title, Button, CommentForm, CommentFormDiv, CommentTextArea} from './Styles';
 
@@ -13,7 +13,7 @@ const Index = () => {
           <CommentTextArea name="comment" placeholder="Add a commment..." id="" ></CommentTextArea>
         </CommentForm>
         <div>
-          <Button className="btn-success">Save</Button>
+          <Button>Save</Button>
         </div>
       </CommentFormDiv>
     </div>

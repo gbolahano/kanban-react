@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {color} from '../../../shared/constants/styles';
 
 export const TitleTextArea = styled.textarea`
   resize: none;
@@ -12,6 +13,6 @@ export const TitleTextArea = styled.textarea`
     border: 2px solid #4c9aff;
   }
   &:hover:not(:focus) {
-    background-color: #e7e7e7;
+    background-color: ${color.backgroundLightest};
   }
 `;

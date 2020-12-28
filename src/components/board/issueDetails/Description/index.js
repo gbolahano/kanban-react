@@ -1,8 +1,7 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
 import {gql} from 'apollo-boost';
 import { useMutation } from '@apollo/react-hooks';
 import { useParams} from 'react-router-dom';
-import ReactQuill from 'react-quill';
 import {Editor, Title, ReactQuilll, SuccessButton, Button} from './Styles';
 import {ISSUES} from '../../Lists';
 

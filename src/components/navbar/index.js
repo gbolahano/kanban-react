@@ -12,7 +12,7 @@ const Index = () => {
     <Fragment>
       <Navbar>
         <figure>
-          <img src={lekki} alt="ic" className="navbar__icon"/>
+          <img src={lekki} alt="ic"/>
         </figure>
 
         <StyledLink to={`${match.url}/create-issue`}>

@@ -4,7 +4,7 @@ export const Title = styled.div`
   font-size: 12px;
   font-weight: bold;
   color: rgba(0,0,0,.7);
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
 `;
 
 
@@ -14,12 +14,12 @@ export const CommentForm = styled.div`
 
 export const CommentFormDiv = styled.div`
   display: grid;
-  margin-top: 10px;
+  margin-top: 1rem;
 `;
 
 export const Avatar = styled.img`
   border-radius: 100%;
-  margin-right: 10px;
+  margin-right: 1rem;
 `;
 
 export const CommentTextArea = styled.textarea`
@@ -39,12 +39,12 @@ export const CommentTextArea = styled.textarea`
 export const Button = styled.button`
   padding: 5px 10px;
   font-size: 1rem;
-  margin-left: 40px;
+  margin-left: 4rem;
   border: none;
   color: #fff;
   cursor: pointer;
   border-radius: 2px;
-  margin-top: 10px;
+  margin-top: 1rem;
   transition: ease-in .01s;
   background-color: #09ac52;
 

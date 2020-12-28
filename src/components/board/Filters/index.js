@@ -1,6 +1,6 @@
 import React, { Fragment} from 'react'
 import { Filters } from './Styles';
-import as from '../../../assets/1.jpg';
+import as from '../../../assets/lekki.jpg';
 
 const Index = () => {
   return (

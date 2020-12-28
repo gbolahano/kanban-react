@@ -4,29 +4,29 @@ export const Title = styled.div`
   font-size: 12px;
   font-weight: bold;
   color: rgba(0,0,0,.7);
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
 `;
 
 
 export const CommentForm = styled.div`
   display: flex;
-  margin-top: 10px;
+  margin-top: 1rem;
 `;
 
 export const CommentFormDiv = styled.div`
   display: grid;
-  margin-top: 10px;
+  margin-top: 1rem;
 `;
 
 export const Avatar = styled.img`
   border-radius: 100%;
-  margin-right: 10px;
-  width: 25px;
+  margin-right: 1rem;
+  width: 2.5rem;
 `;
 
 export const Name = styled.div`
   font-size: 15px;
-  margin-bottom: 7px;
+  margin-bottom: .7rem;
 `;
 
 export const CommentBody = styled.div`

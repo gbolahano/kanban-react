@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, useHistory } from 'react-router-dom';
 import { useRouteMatch } from 'react-router-dom';
 
 import Modal from '../modal/index';
@@ -11,6 +11,7 @@ import Lists from './Lists';
 
 const Index = () => {
   const match = useRouteMatch();
+  const history = useHistory()
 
   return (
     <Fragment>

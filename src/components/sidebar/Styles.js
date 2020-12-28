@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
+import {color} from '.././shared/constants/styles';
 
 export const Container = styled.div`
   grid-template-columns: sidebar-start / sidebar-end;
@@ -22,12 +23,12 @@ export const Top = styled.div`
   display: flex;
   align-items: center;
   img {
-    width: 45px;
-    height: 45px;
+    width: 4.5rem;
+    height: 4.5rem;
     border-radius: 5px;
   }
   div {
-    margin-left: 10px;
+    margin-left: 1rem;
     line-height: 1.8;
     h3 {
       font-size: 12px;
@@ -60,14 +61,14 @@ export const StyledLink = styled(Link)`
   align-items: center;
   font-size: 15px;
   color: ${props => props.active ? '#0146b3' : '#000'};
-  background-color: ${props => props.active ? '#ccc' : '#fafafa'};
+  background-color: ${props => props.active ? color.backgroundLightest : '#fafafa'};
   padding: 10px 10px;
   span {
-    margin-right: 10px;
+    margin-right: 1rem;
     font-size: 15px;
   }
   &:hover {
     color: #0146b3 !important;
-    background-color: #ccc;
+    background-color: ${color.backgroundLightest};
   }
 `;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { color } from '../../shared/constants/styles';
 
 export const Container = styled.div`
   display: grid;
@@ -10,8 +10,8 @@ export const Container = styled.div`
   width: 100%;
   background-color: #fff;
   padding: 20px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
   border-radius: 5px;
   `;
 
@@ -19,24 +19,32 @@ export const Action = styled.div`
   grid-area: action;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
 `;
 
 export const Content = styled.div`
   grid-area: content;
   display: grid;
   grid-template-columns: 1fr minmax(min-content, 25vw);
-  grid-gap: 30px;
+  grid-gap: 3rem;
 `;
 
 
 export const ActionRight = styled.div`
-
+  button {
+    padding: 8px;
+    background-color: ${color.backgroundLightest};
+    border: 1px solid ${color.backgroundLight};
+    font-size: 1.2rem;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+  }
 `;
 
 export const Left = styled.div`
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 2rem;
   p {
     img {
       max-width: 100%;
@@ -46,7 +54,7 @@ export const Left = styled.div`
 
 export const Right = styled.div`
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 2rem;
   align-content: start;
   font-size: 30px;
 `;

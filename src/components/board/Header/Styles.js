@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const BreadCrumbs = styled.div`
-  margin-top: 10px;
+  margin-top: 1rem;
   color: #444;
 `;
 
@@ -12,7 +12,8 @@ export const Title = styled.div`
     font-size: 2.5rem;
     color: #444;
   }
-  button {
+  a {
+    text-decoration: none;
     outline: none;
     display: block;
     background-color: #fafafa;
@@ -23,7 +24,7 @@ export const Title = styled.div`
     border-radius: 5px;
 
     &:hover {
-      background-color: rgba(#cccccc, .6);
+      background-color: rgba(red, .6);
     }
   }
 `;
