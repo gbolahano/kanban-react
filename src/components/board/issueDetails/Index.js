@@ -1,7 +1,7 @@
 import React from 'react'
 import { withRouter, useParams } from 'react-router-dom';
 import{ gql } from 'apollo-boost';
-import { useQuery } from '@apollo/react-hooks';
+import { useMutation, useQuery } from '@apollo/react-hooks';
 
 import Type from './Type';
 import Title from './Title';
@@ -13,6 +13,7 @@ import Reporter from './Reporter';
 import Priority from './Priority';
 
 import { Container, Action, Content, ActionRight, Left, Right } from  './Styles';
+import { ISSUES } from '../Lists';
 
 const GET_ISSUE_BY_ID = gql`
   query GET_ISSUE_BY_ID($issueId: Int) {
@@ -41,8 +42,17 @@ const GET_ISSUE_BY_ID = gql`
   }
 `;
 
+const DELETE_ISSUE = gql`
+  mutation DELETE_ISSUE($issueId: Int) {
+    deleteIssue(issueId: $issueId) {
+        id
+      }
+  }
+`;
+
 const IssueDetails = (props) => {
   const params = useParams();
+  const [deleteIssue] = useMutation(DELETE_ISSUE);
   const {loading, data, error} = useQuery(GET_ISSUE_BY_ID, {
     variables: {issueId: parseInt(params.issueId)},
     // fetchPolicy: 'no-cache'
@@ -51,12 +61,24 @@ const IssueDetails = (props) => {
   if (error) return <Container>ERROR!!!</Container>;
   if (loading) return <Container>Loading!!!</Container>;
 
+  const handleDelete = async () => {
+    await deleteIssue({
+      variables: {
+        issueId: parseInt(params.issueId)
+      },
+      refetchQueries: [{ query: ISSUES }]
+    });
+    props.history.push('/project');
+  }
 
     return (
       <Container>
         <Action>
           <Type issue={data.Issue} />
-          <ActionRight><button onClick={() => props.history.push('/project')}>X</button></ActionRight>
+          <ActionRight>
+            <span onClick={handleDelete} className="lnr lnr-trash"></span>
+            <span onClick={() => props.history.push('/project')}>X</span>
+          </ActionRight>
         </Action>
         <Content>
           <Left>

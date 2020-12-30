@@ -42,7 +42,7 @@ const Index = ({ issue }) => {
   }
   return (
     <div>
-      <Title>Description</Title>
+      <Title onClick={() => setEdit(1)}>Description</Title>
       <form onSubmit={handleSubmit}>
       {
         edit ?

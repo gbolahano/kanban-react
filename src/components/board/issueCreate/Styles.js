@@ -6,6 +6,20 @@ export const Title = styled.div`
   font-size: 2.5rem;
   color: rgba(0,0,0,.8);
   font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  span {
+    font-size: 2rem;
+    &:hover {
+      background-color: ${color.backgroundLightest};
+    }
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 8px;
+    color: #000;
+  }
 `;
 
 export const Container = styled.div`

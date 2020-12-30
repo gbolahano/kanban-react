@@ -2,6 +2,7 @@ import React, {Fragment, useState} from 'react';
 import { useParams } from 'react-router-dom';
 import {gql} from 'apollo-boost';
 import {useMutation} from '@apollo/react-hooks';
+import TextareaAutosize from 'react-textarea-autosize';
 
 import {ISSUES} from '../../Lists';
 import {TitleTextArea} from './Styles';
@@ -42,7 +43,7 @@ const Index = ({ issue }) => {
   return (
     <Fragment>
       <TitleTextArea
-      rows={1}
+      minRows={1}
       value={title}
       onChange={handleChange} />
     </Fragment>

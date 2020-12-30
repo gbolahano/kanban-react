@@ -10,7 +10,11 @@ const Index = () => {
       <CommentFormDiv>
         <CommentForm>
           <Avatar src={as} width="35px" height="35px" alt="as" />
-          <CommentTextArea name="comment" placeholder="Add a commment..." id="" ></CommentTextArea>
+          <CommentTextArea
+            minRows={1}
+            name="comment"
+            placeholder="Add a commment..."
+            id="" ></CommentTextArea>
         </CommentForm>
         <div>
           <Button>Save</Button>

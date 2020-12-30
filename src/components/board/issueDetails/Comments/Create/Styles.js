@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import TextareaAutosize from 'react-textarea-autosize';
+import { color } from '../../../../shared/constants/styles';
 
 export const Title = styled.div`
   font-size: 12px;
@@ -6,7 +8,6 @@ export const Title = styled.div`
   color: rgba(0,0,0,.7);
   margin-bottom: 1.5rem;
 `;
-
 
 export const CommentForm = styled.div`
   display: flex;
@@ -22,17 +23,21 @@ export const Avatar = styled.img`
   margin-right: 1rem;
 `;
 
-export const CommentTextArea = styled.textarea`
+export const CommentTextArea = styled(TextareaAutosize)`
   width: 100%;
+  resize: none;
   border-radius: 5px;
-  background-color: #e7e7e7;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 1.2rem;
   border: none;
   color: rgba(0,0,0,.7);
   font-weight: bold;
+  padding: 10px 5px;
   &:focus {
-    border: 2px solid #4c9aff;
+    border: 1px solid #4c9aff;
+  }
+  &:hover:not(:focus) {
+    background-color: ${color.backgroundLightest};
   }
 `;
 

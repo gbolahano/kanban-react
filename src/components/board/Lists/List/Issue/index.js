@@ -28,11 +28,11 @@ const priority = issue => {
   switch (issue.priority) {
     case 'highest':
       return (
-        <span class="lnr icon-custom icon-custom-danger lnr-arrow-up"></span>
+        <span class="lnr icon-custom icon-custom-highest lnr-arrow-up"></span>
       )
     case 'high':
       return (
-        <span class="lnr icon-custom icon-custom-danger lnr-arrow-up"></span>
+        <span class="lnr icon-custom icon-custom-high lnr-arrow-up"></span>
       )
     case 'medium':
       return (
@@ -40,11 +40,11 @@ const priority = issue => {
       )
     case 'low':
       return (
-        <span class="lnr icon-custom icon-custom-sucess icon-custom-medium lnr-arrow-down"></span>
+        <span class="lnr icon-custom icon-custom-low lnr-arrow-down"></span>
       )
     case 'lowest':
       return (
-        <span class="lnr icon-custom icon-custom-light lnr-arrow-down"></span>
+        <span class="lnr icon-custom icon-custom-lowest lnr-arrow-down"></span>
       )
     default:
       break;

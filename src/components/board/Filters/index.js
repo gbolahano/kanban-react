@@ -1,6 +1,13 @@
-import React, { Fragment} from 'react'
+import React, { Fragment } from 'react'
+import {useQuery} from '@apollo/react-hooks';
+import {gql} from 'apollo-boost';
+
+import { client } from '../../../App';
+
 import { Filters } from './Styles';
-import as from '../../../assets/lekki.jpg';
+import pic1 from '../../../assets/1.jpg';
+import pic2 from '../../../assets/2.jpg';
+import pic3 from '../../../assets/3.jpg';
 
 const Index = () => {
   return (
@@ -8,13 +15,13 @@ const Index = () => {
       <Filters>
         <div>
           <figure>
-            <img src={as} alt=""/>
+            <img src={pic1} alt=""/>
           </figure>
           <figure>
-            <img src={as} alt=""/>
+            <img src={pic2} alt=""/>
           </figure>
           <figure>
-            <img src={as} alt=""/>
+            <img src={pic3} alt=""/>
           </figure>
         </div>
         <button>Only My Issues</button>

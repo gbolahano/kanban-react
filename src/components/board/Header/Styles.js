@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { color } from '../../shared/constants/styles';
 
 export const BreadCrumbs = styled.div`
   margin-top: 1rem;
@@ -13,7 +14,10 @@ export const Title = styled.div`
     color: #444;
   }
   a {
-    text-decoration: none;
+    &:link,
+    &:visited{
+      text-decoration: none;
+    }
     outline: none;
     display: block;
     background-color: #fafafa;
@@ -22,9 +26,9 @@ export const Title = styled.div`
     border: 0px;
     cursor: pointer;
     border-radius: 5px;
-
+    color: #000;
     &:hover {
-      background-color: rgba(red, .6);
+      background-color: ${color.backgroundLightest};
     }
   }
 `;

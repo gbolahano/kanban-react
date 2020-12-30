@@ -24,7 +24,7 @@ export const Filters = styled.div`
   button{
     outline: none;
     display: block;
-    background-color: #f5f5f7;
+    background-color: #fafafa;
     padding: 6px 15px;
     font-size: 1.2rem;
     border: 0px;

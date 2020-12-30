@@ -29,16 +29,19 @@ export const Content = styled.div`
   grid-gap: 3rem;
 `;
 
-
 export const ActionRight = styled.div`
-  button {
-    padding: 8px;
-    background-color: ${color.backgroundLightest};
-    border: 1px solid ${color.backgroundLight};
-    font-size: 1.2rem;
-    cursor: pointer;
-    outline: none;
+  display: flex;
+  align-items: center;
+  span {
+    font-size: 2rem;
+    &:hover {
+      background-color: ${color.backgroundLightest};
+    }
+    border: none;
     border-radius: 5px;
+    cursor: pointer;
+    padding: 8px;
+    color: #000;
   }
 `;
 

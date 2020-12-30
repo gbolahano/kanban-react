@@ -1,9 +1,21 @@
 import React, { useState, useEffect} from 'react';
+import {useParams} from 'react-router-dom';
 import { DragDropContext } from 'react-beautiful-dnd';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery, useMutation } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 import { Container } from './Styles';
 import List from './List';
+
+const UPDATE_STATUS = gql`
+  mutation UPDATE_STATUS($issueId: Int, $status: IssueStatus) {
+    updateIssue(issueId: $issueId, data: {
+      status: $status
+      }) {
+        id
+        status
+      }
+  }
+`;
 
 const ISSUES = gql`
   query Issues{
@@ -36,8 +48,11 @@ const ISSUES = gql`
 
 const Index = () => {
   const columns = ['backlog', 'development'];
+  const params = useParams();
   const { loading, error, data } = useQuery(ISSUES);
   const [filteredData, setFilteredData] = useState({});
+
+  const [updateStatus] = useMutation(UPDATE_STATUS);
 
   useEffect(() => {
     if(data) {
@@ -60,7 +75,7 @@ const Index = () => {
 
   // let backlog = data.Issues.filter(issue => issue.status === 'backlog');
 
-  const onDragEnd = result => {
+  const onDragEnd = async (result) => {
     console.log(result);
     const  { destination, source, draggableId } = result;
 
@@ -100,6 +115,27 @@ const Index = () => {
       [destination.droppableId]: destinationData
     });
 
+    await updateStatus({
+      variables: {
+        issueId: remIssue.id,
+        status: destination.droppableId
+      },
+      update: (cache, {data: {updateIssue}}) => {
+        // read query data from cache
+        let d = cache.readQuery({ query: ISSUES });
+        // find the data to be updated from the cached data
+        let issueIndex = d.Issues.find(i => i.id == updateIssue.id);
+        // update the data accordingly
+        issueIndex.status = updateIssue.status;
+        // write the data back to the cache
+        cache.writeQuery({ query: ISSUES, data: d });
+      }
+    });
+
+  }
+
+  const getData = (status) => {
+    return data.Issues.filter(issue => issue.status === status);
   }
 
   return (

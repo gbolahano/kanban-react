@@ -12,6 +12,13 @@ export const Title = styled.div`
 export const Editor = styled.div`
   min-height: 10rem;
   font-size: 4rem;
+  strong {
+    padding: 2px 4px;
+  }
+  span {
+    padding: 2px 4px;
+    font-size: 1.1rem;
+  }
 `;
 
 export const Button = styled.button`

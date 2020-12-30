@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation, useQuery } from '@apollo/react-hooks';
+import { withRouter } from 'react-router-dom';
 import {gql} from 'apollo-boost';
 import {useFormik} from 'formik';
+import {ISSUES} from '../Lists';
 
 
 import { Container, Title, Editor, FormGroup, FormError, FormTitle, StyledLink, StyledInput, FormCaption, Buttons, Button, PrimaryButton } from './Styles';
@@ -26,20 +28,31 @@ const CREATE_ISSUE = gql`
       reporter: $reporter,
       assignee: $assignee
       }) {
-      id
       title
       type
       status
+      priority
+      description
+      reporter {
+        id
+        name
+      }
       listPosition
       assignees{
+        id
         name
+      }
+      comments {
+        body
+        user{
+          name
+        }
       }
     }
   }
 `;
 
-const Index = () => {
-
+const Index = (props) => {
   const [createIssue, { loading, data, error }] = useMutation(CREATE_ISSUE);
 
   const validate = (values) => {
@@ -70,9 +83,9 @@ const Index = () => {
         ...value,
         assignee: assigneeIds
       }
-      // console.log(data);
       const response = await createIssue({
-        variables: data
+        variables: data,
+        refetchQueries: [{ query: ISSUES }]
       });
 
       console.log(response);
@@ -81,7 +94,10 @@ const Index = () => {
 
   return (
     <Container>
-      <Title>Create Issue</Title>
+      <Title>
+        Create Issue
+        <span onClick={() => props.history.push('/project')}>X</span>
+      </Title>
       <form onSubmit={formik.handleSubmit}>
         <FormGroup>
           <FormTitle>Issue Type</FormTitle>
@@ -150,4 +166,4 @@ const Index = () => {
   )
 };
 
-export default Index;
+export default withRouter(Index);
