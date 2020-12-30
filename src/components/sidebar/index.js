@@ -1,12 +1,12 @@
 import React from 'react';
-import lekki from '../../assets/lekki.jpg';
+import project from '../../assets/project.jpg';
 import { Container, SidebarNav, StyledLink, Top } from './Styles';
 
 const Sidebar = () => {
   return (
       <Container>
         <Top>
-          <img src={lekki} alt="ic"/>
+          <img src={project} alt="ic"/>
           <div>
             <h3>Kanban board</h3>
             <span>Software roject</span>

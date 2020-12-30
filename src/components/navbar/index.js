@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { useRouteMatch, Route } from 'react-router-dom';
 
-import lekki from '../../assets/lekki.jpg';
+import project from '../../assets/project.jpg';
 import {Navbar, StyledLink} from './Styles';
 import Modal from  '../modal/index';
 import IssueCreate from '../board/issueCreate';
@@ -12,7 +12,7 @@ const Index = () => {
     <Fragment>
       <Navbar>
         <figure>
-          <img src={lekki} alt="ic"/>
+          <img src={project} alt="ic"/>
         </figure>
 
         <StyledLink to={`${match.url}/create-issue`}>

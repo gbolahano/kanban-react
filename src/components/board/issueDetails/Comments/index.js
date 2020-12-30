@@ -1,5 +1,5 @@
 import React from 'react';
-import as from '../../../../assets/lekki.jpg';
+import as from '../../../../assets/project.jpg';
 
 import {Avatar, PrimaryButton, SuccessButton, Button, CommentForm, CommentFormDiv, Name, CommentBody} from './Styles';
 import Create from './Create';
