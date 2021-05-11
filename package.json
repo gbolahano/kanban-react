@@ -11,7 +11,7 @@
     "axios": "^0.19.2",
     "formik": "^2.1.4",
     "graphql": "^15.4.0",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-beautiful-dnd": "^13.0.0",
